@@ -16,10 +16,13 @@ class ArticleController
 	}
 
 	/**
-	 * @Route("/news/{$articleName")
+	 * @Route("/news/{$articleName}")
 	 */
 	public function show($articleName)
 	{
-		return new Response('This is gonna be my article named: ' . $articleName);
+		return new Response(sprintf(
+			'This is gonna be my article named:  "%s"',
+			$articleName
+		));
 	}
 }
