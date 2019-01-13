@@ -16,14 +16,24 @@ class ArticleController
 	}
 
 	/**
-	 * @Route("/news/{$slug}")
+	 * @Route("/news/{articleName}")
 	 */
-	public function show($slug)
+	public function show($articleName)
 	{
 		return new Response(sprintf(
-			'This is gonna be my article named:  "%s"',
-			$slug
+			'This is gonna be my news named:  "%s"',
+			$articleName
 		));
+	}
+
+	/**
+	 * @Route("/article/{articleName}")
+	 */
+	public function publish($articleName)
+	{
+		return new Response(
+			'This is gonna be my article named:' . $articleName
+		);
 	}
 
 	/**
@@ -32,6 +42,5 @@ class ArticleController
 	public function showFeed()
 	{
 		return new Response('This is gonna be my feed whatever. ');
-
 	}
 }
