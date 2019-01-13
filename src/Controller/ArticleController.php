@@ -16,13 +16,22 @@ class ArticleController
 	}
 
 	/**
-	 * @Route("/news/{$articleName}")
+	 * @Route("/news/{$slug}")
 	 */
-	public function show($articleName)
+	public function show($slug)
 	{
 		return new Response(sprintf(
 			'This is gonna be my article named:  "%s"',
-			$articleName
+			$slug
 		));
+	}
+
+	/**
+	 * @Route("/feed/does-a-regular-feed-work")
+	 */
+	public function showFeed()
+	{
+		return new Response('This is gonna be my feed whatever. ');
+
 	}
 }
