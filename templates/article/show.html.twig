@@ -8,4 +8,12 @@
            <div style="background: aqua; width: 20px; height:20px;"></div>
         </div>
     </section>
+    <section>
+        <h2>Comments List: </h2>
+        <ul>
+            {% for comment in comments %}
+                <li>{{ comment }}</li>
+            {% endfor %}
+        </ul>
+    </section>
 </article>
