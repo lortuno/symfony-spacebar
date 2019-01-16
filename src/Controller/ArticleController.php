@@ -21,11 +21,6 @@ class ArticleController extends AbstractController
 	 */
 	public function show($articleName)
 	{
-		return new Response(sprintf(
-			'This is gonna be my news named:  "%s"',
-			$articleName
-		));
-
 		return $this->render('article/show.html.twig', [
 			'title' => ucwords(str_replace('-', ' ', $articleName)),
 		]);
