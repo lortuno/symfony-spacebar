@@ -22,7 +22,7 @@
         <a href="https://twig.symfony.com/doc/2.x/" target="_blank">Documentation</a>
     </section>
     <section>
-        <h2>Comments ( {% comments|length %} ): </h2>
+        <h2>Comments ( {{ comments|length }} ): </h2>
         <ul>
             {% for comment in comments %}
                 <li>{{ comment }}</li>
