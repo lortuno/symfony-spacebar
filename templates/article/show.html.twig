@@ -6,11 +6,10 @@
 {# We need to set the title block. #}
 {% block title %}Read {{ title }}{% endblock %}
 
-{# Dumping in twig, needs no arguments. prints all the variables we have access here. Goes outside the body. #}
-{{ dump() }}
-
 {# We need to set the body block. #}
 {% block body %}
+    {# Dumping in twig, needs no arguments. prints all the variables we have access here. Goes outside the tags. #}
+    {{ dump() }}
     <article>
         <h1>{{ title }}</h1>
         <section>
