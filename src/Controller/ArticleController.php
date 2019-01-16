@@ -26,6 +26,10 @@ class ArticleController extends AbstractController
 			'Part2',
 			'It will be awesome when this has css'
 		];
+
+		// Let's dump some things with the dumper library
+		dump($articleName, $this);
+
 		return $this->render('article/show.html.twig', [
 			'title' => ucwords(str_replace('-', ' ', $articleName)),
 			'comments' => $comments,

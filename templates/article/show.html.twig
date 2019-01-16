@@ -1,33 +1,33 @@
 {# Comments are ignored in the html code printing #}
 
 {# First we need to import the base twig. #}
-{%  extends 'base.html.twig' %}
+{% extends 'base.html.twig' %}
 
 {# We need to set the title block. #}
-{% block title %}
-    Read {{ title }}
-{%  endblock %}
+{% block title %}Read {{ title }}{% endblock %}
 
 {# We need to set the body block. #}
 {% block body %}
-<article>
-    <h1>{{ title }}</h1>
-    <section>
-        <h2>We're writing content!</h2>
-        <div>
-            <p>Example of square:</p>
-           <div style="background: navy; width: 25px; height:25px;"></div>
-        </div>
-        <p><strong>Twig references</strong>Browse the online reference to learn more about built-in features.</p>
-        <a href="https://twig.symfony.com/doc/2.x/" target="_blank">Documentation</a>
-    </section>
-    <section>
-        <h2>Comments ( {{ comments|length }} ): </h2>
-        <ul>
-            {% for comment in comments %}
-                <li>{{ comment }}</li>
-            {% endfor %}
-        </ul>
-    </section>
-</article>
+    <article>
+        <h1>{{ title }}</h1>
+        <section>
+            <h2>We're writing content!</h2>
+            <div>
+                <p>Example of square: </p>
+                <div style="background: navy; width: 25px; height:25px;"></div>
+            </div>
+            <p><strong>Twig references: </strong>Browse the online reference to learn more about built-in features.</p>
+            <a href="https://twig.symfony.com/doc/2.x/" target="_blank">Documentation</a>
+        </section>
+        <section>
+            <h2>Comments ( {{ comments|length }} ): </h2>
+            <ul>
+                {% for comment in comments %}
+                    <li>{{ comment }}</li>
+                {% endfor %}
+            </ul>
+            {# Dumping in twig, needs no arguments. prints all the variables we have access here #}
+            {{ dump() }}
+        </section>
+    </article>
 {% endblock %}
