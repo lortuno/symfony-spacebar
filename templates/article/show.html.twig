@@ -6,6 +6,9 @@
 {# We need to set the title block. #}
 {% block title %}Read {{ title }}{% endblock %}
 
+{# Dumping in twig, needs no arguments. prints all the variables we have access here. Goes outside the body. #}
+{{ dump() }}
+
 {# We need to set the body block. #}
 {% block body %}
     <article>
@@ -26,8 +29,6 @@
                     <li>{{ comment }}</li>
                 {% endfor %}
             </ul>
-            {# Dumping in twig, needs no arguments. prints all the variables we have access here #}
-            {{ dump() }}
         </section>
     </article>
 {% endblock %}
