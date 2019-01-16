@@ -34,6 +34,7 @@ class ComposerStaticInit16e8138fb2d780537de53a9fbc484095
             'Symfony\\Bundle\\WebServerBundle\\' => 31,
             'Symfony\\Bundle\\FrameworkBundle\\' => 31,
             'Sensio\\Bundle\\FrameworkExtraBundle\\' => 35,
+            'SensioLabs\\Security\\' => 20,
         ),
         'P' => 
         array (
@@ -48,6 +49,10 @@ class ComposerStaticInit16e8138fb2d780537de53a9fbc484095
             'Doctrine\\Common\\Cache\\' => 22,
             'Doctrine\\Common\\Annotations\\' => 28,
             'Doctrine\\Common\\' => 16,
+        ),
+        'C' => 
+        array (
+            'Composer\\CaBundle\\' => 18,
         ),
         'A' => 
         array (
@@ -141,6 +146,10 @@ class ComposerStaticInit16e8138fb2d780537de53a9fbc484095
         array (
             0 => __DIR__ . '/..' . '/sensio/framework-extra-bundle',
         ),
+        'SensioLabs\\Security\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/sensiolabs/security-checker/SensioLabs/Security',
+        ),
         'Psr\\SimpleCache\\' => 
         array (
             0 => __DIR__ . '/..' . '/psr/simple-cache/src',
@@ -175,6 +184,10 @@ class ComposerStaticInit16e8138fb2d780537de53a9fbc484095
             1 => __DIR__ . '/..' . '/doctrine/event-manager/lib/Doctrine/Common',
             2 => __DIR__ . '/..' . '/doctrine/persistence/lib/Doctrine/Common',
             3 => __DIR__ . '/..' . '/doctrine/reflection/lib/Doctrine/Common',
+        ),
+        'Composer\\CaBundle\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/composer/ca-bundle/src',
         ),
         'App\\Tests\\' => 
         array (
