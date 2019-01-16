@@ -43,8 +43,11 @@ class ComposerStaticInit16e8138fb2d780537de53a9fbc484095
             'Symfony\\Bundle\\WebServerBundle\\' => 31,
             'Symfony\\Bundle\\WebProfilerBundle\\' => 33,
             'Symfony\\Bundle\\TwigBundle\\' => 26,
+            'Symfony\\Bundle\\MonologBundle\\' => 29,
             'Symfony\\Bundle\\FrameworkBundle\\' => 31,
+            'Symfony\\Bundle\\DebugBundle\\' => 27,
             'Symfony\\Bridge\\Twig\\' => 20,
+            'Symfony\\Bridge\\Monolog\\' => 23,
             'Sensio\\Bundle\\FrameworkExtraBundle\\' => 35,
             'SensioLabs\\Security\\' => 20,
         ),
@@ -54,6 +57,14 @@ class ComposerStaticInit16e8138fb2d780537de53a9fbc484095
             'Psr\\Log\\' => 8,
             'Psr\\Container\\' => 14,
             'Psr\\Cache\\' => 10,
+        ),
+        'M' => 
+        array (
+            'Monolog\\' => 8,
+        ),
+        'E' => 
+        array (
+            'EasyCorp\\EasyLog\\' => 17,
         ),
         'D' => 
         array (
@@ -174,13 +185,25 @@ class ComposerStaticInit16e8138fb2d780537de53a9fbc484095
         array (
             0 => __DIR__ . '/..' . '/symfony/twig-bundle',
         ),
+        'Symfony\\Bundle\\MonologBundle\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/symfony/monolog-bundle',
+        ),
         'Symfony\\Bundle\\FrameworkBundle\\' => 
         array (
             0 => __DIR__ . '/..' . '/symfony/framework-bundle',
         ),
+        'Symfony\\Bundle\\DebugBundle\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/symfony/debug-bundle',
+        ),
         'Symfony\\Bridge\\Twig\\' => 
         array (
             0 => __DIR__ . '/..' . '/symfony/twig-bridge',
+        ),
+        'Symfony\\Bridge\\Monolog\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/symfony/monolog-bridge',
         ),
         'Sensio\\Bundle\\FrameworkExtraBundle\\' => 
         array (
@@ -205,6 +228,14 @@ class ComposerStaticInit16e8138fb2d780537de53a9fbc484095
         'Psr\\Cache\\' => 
         array (
             0 => __DIR__ . '/..' . '/psr/cache/src',
+        ),
+        'Monolog\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/monolog/monolog/src/Monolog',
+        ),
+        'EasyCorp\\EasyLog\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/easycorp/easy-log-handler/src',
         ),
         'Doctrine\\Common\\Inflector\\' => 
         array (
