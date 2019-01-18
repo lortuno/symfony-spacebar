@@ -24,7 +24,8 @@
                                 <span class="align-left article-details"><img class="article-author-img rounded-circle" src="{{ asset('images/alien-profile.png') }}"> Mike Ferengi </span>
                                 <span class="pl-2 article-details"> 3 hours ago</span>
                                 <span class="pl-2 article-details">
-                                    <span class="rw-like-article-count">5</span> <a href="#" class="fa fa-heart-o like-article e-like-article"></a> </span>
+                                    <span class="rw-like-article-count">5</span>
+                                    <a href="{{ path('article_change_like', {articleName: articleName}) }}" class="fa fa-heart-o like-article e-like-article"></a> </span>
                             </section>
                         </div>
                     </div>

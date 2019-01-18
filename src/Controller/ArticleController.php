@@ -2,8 +2,8 @@
 
 namespace App\Controller;
 
-use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\HttpFoundation\Response;
 
 class ArticleController extends AbstractController
@@ -30,17 +30,8 @@ class ArticleController extends AbstractController
 		return $this->render('article/show.html.twig', [
 			'title' => ucwords(str_replace('-', ' ', $articleName)),
 			'comments' => $comments,
+            'articleName' => $articleName,
 		]);
-	}
-
-	/**
-	 * @Route("/article/{articleName}")
-	 */
-	public function publish($articleName)
-	{
-		return new Response(
-			'This is gonna be my article named:' . $articleName
-		);
 	}
 
 	/**
@@ -48,6 +39,17 @@ class ArticleController extends AbstractController
 	 */
 	public function showFeed()
 	{
-		return new Response('This is gonna be my feed whatever. ');
+		return new Response('This is gonna be my feed whatever. Example number two with a fixed article name');
 	}
+
+    /**
+     * Modifica el número de likes de la página, identificando de qué article procede el like o dislike.
+     * Lo envía por POST. ES un API endpoint.
+     * @Route("/news/{articleName}/like", name="article_change_like", methods={"POST"})
+     */
+	public function updateArticleLikes($articleName)
+    {
+        // TODO -  Connect to real database
+        return new JsonResponse(['likes' => rand(5,100)]);
+    }
 }
