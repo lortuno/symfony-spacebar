@@ -2,6 +2,8 @@
 
 namespace App\Controller;
 
+// Sale como en desuso pero el PHPDoc lo usa
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\HttpFoundation\Response;
