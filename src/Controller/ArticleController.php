@@ -30,11 +30,10 @@ class ArticleController extends AbstractController
             'It will be awesome when this has css',
         ];
 
-        $articleContent = "
-            Spicy **jalapeno bacon** ipsum dolor amet veniam shank in dolore. Ham hock nisi landjaeger cow,
+        $articleContent = "Spicy **jalapeno bacon** ipsum dolor amet veniam shank in dolore. Ham hock nisi landjaeger cow,
             lorem proident [beef ribs](https://baconipsum.com/) aute enim veniam ut cillum pork chuck picanha. Dolore reprehenderit
             labore minim pork belly spare ribs cupim short loin in. Elit exercitation eiusmod dolore cow
-            turkey shank eu pork belly meatball non cupim.
+            turkey shank eu pork belly meatball non cupim.<br>
             Laboris beef ribs fatback fugiat eiusmod jowl kielbasa alcatra dolore velit ea ball tip. Pariatur
             laboris sunt venison, et laborum dolore minim non meatball. Shankle eu flank aliqua shoulder,
             capicola biltong frankfurter boudin cupim officia. Exercitation fugiat consectetur ham. Adipisicing
