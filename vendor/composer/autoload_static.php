@@ -62,6 +62,11 @@ class ComposerStaticInit16e8138fb2d780537de53a9fbc484095
         'M' => 
         array (
             'Monolog\\' => 8,
+            'Michelf\\' => 8,
+        ),
+        'K' => 
+        array (
+            'Knp\\Bundle\\MarkdownBundle\\' => 26,
         ),
         'E' => 
         array (
@@ -237,6 +242,14 @@ class ComposerStaticInit16e8138fb2d780537de53a9fbc484095
         'Monolog\\' => 
         array (
             0 => __DIR__ . '/..' . '/monolog/monolog/src/Monolog',
+        ),
+        'Michelf\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/michelf/php-markdown/Michelf',
+        ),
+        'Knp\\Bundle\\MarkdownBundle\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/knplabs/knp-markdown-bundle',
         ),
         'EasyCorp\\EasyLog\\' => 
         array (
