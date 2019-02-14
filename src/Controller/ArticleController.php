@@ -3,8 +3,9 @@
 namespace App\Controller;
 
 // Sale como en desuso pero el PHPDoc lo usa
-use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
+use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+use Symfony\Component\Cache\Adapter\AdapterInterface;
 use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\HttpFoundation\Response;
 use Michelf\MarkdownInterface;
@@ -22,7 +23,7 @@ class ArticleController extends AbstractController
     /**
      * @Route("/news/{articleName}", name="article_show")
      */
-    public function show($articleName, MarkdownInterface $markdown)
+    public function show($articleName, MarkdownInterface $markdown, AdapterInterface $cache)
     {
         $comments = [
             'This is gonna be my first comment',
@@ -46,6 +47,14 @@ class ArticleController extends AbstractController
             fugiat.";
 
         $articleContent = $markdown->transform($articleContent);
+        $item           = $cache->getItem('markdown_'.md5($articleContent));
+
+        if (!$item->isHit()) {
+            $item->set($articleContent);
+            $cache->save($item);
+        }
+
+        $articleContent = $item->get();
 
         return $this->render(
             'article/show.html.twig',
