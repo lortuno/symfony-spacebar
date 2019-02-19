@@ -4,6 +4,7 @@ namespace App\Controller;
 
 // Sale como en desuso pero el PHPDoc lo usa
 use App\Services\MarkdownHelper;
+use Psr\Log\LoggerInterface;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\JsonResponse;
@@ -22,7 +23,7 @@ class ArticleController extends AbstractController
     /**
      * @Route("/news/{articleName}", name="article_show")
      */
-    public function show($articleName, MarkdownHelper $markdownHelper)
+    public function show($articleName, MarkdownHelper $markdownHelper, LoggerInterface $logger)
     {
         $comments = [
             'This is gonna be my first comment',
