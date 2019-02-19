@@ -26,7 +26,7 @@ services:
   # Servicio de logger en un nuevo canal para markdown. El @ indica pasar el servicio con ese id, no un string.
   App\Services\MarkdownHelper:
     arguments:
-      $logger: 'monolog.logger.markdown'
+      $logger: '@monolog.logger.markdown'
 
   # add more service definitions when explicit configuration is needed
   # please note that last definitions always *replace* previous ones
