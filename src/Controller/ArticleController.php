@@ -3,12 +3,12 @@
 namespace App\Controller;
 
 // Sale como en desuso pero el PHPDoc lo usa
-use App\Services\MarkdownHelper;
-use Psr\Log\LoggerInterface;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\HttpFoundation\Response;
+use App\Services\MarkdownHelper;
+use Psr\Log\LoggerInterface;
 
 class ArticleController extends AbstractController
 {

@@ -73,7 +73,7 @@ class MarkdownHelper
      */
     private static function getWordsToLog($source)
     {
-        $words        = array('bacon', 'asteroids');
+        $words        = array('bacon', 'jalapeno');
         $wordsChecked = '';
 
         foreach ($words as $word) {
