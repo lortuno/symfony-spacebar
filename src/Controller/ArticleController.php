@@ -23,7 +23,7 @@ class ArticleController extends AbstractController
     /**
      * @Route("/news/{articleName}", name="article_show")
      */
-    public function show($articleName, MarkdownHelper $markdownHelper, LoggerInterface $logger)
+    public function show($articleName, MarkdownHelper $markdownHelper, LoggerInterface $markdownLogger)
     {
         $comments = [
             'This is gonna be my first comment',
