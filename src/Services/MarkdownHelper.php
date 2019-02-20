@@ -16,6 +16,7 @@ class MarkdownHelper
     private $cache;
     private $markdown;
     private $markdownLogger;
+    private $isDebug;
 
     /**
      * MarkdownHelper constructor.
@@ -23,11 +24,12 @@ class MarkdownHelper
      * @param   MarkdownInterface $markdown
      * @param   AdapterInterface  $cache
      */
-    public function __construct(MarkdownInterface $markdown, AdapterInterface $cache, LoggerInterface $markdownLogger)
+    public function __construct(MarkdownInterface $markdown, AdapterInterface $cache, LoggerInterface $markdownLogger, bool $isDebug)
     {
         $this->markdown = $markdown;
         $this->cache    = $cache;
         $this->logger   = $markdownLogger;
+        $this->isDebug  = $isDebug;
     }
 
     /**
@@ -57,7 +59,7 @@ class MarkdownHelper
      */
     private function writeLog($source)
     {
-        $wordToLog = self::getWordsToLog($source);
+        $wordToLog = $this->getWordsToLog($source);
 
         if (!empty($wordToLog)) {
             $this->logger->info('They are talking about '.$wordToLog.' again!');
@@ -71,7 +73,7 @@ class MarkdownHelper
      *
      * @return  string
      */
-    private static function getWordsToLog($source)
+    private function getWordsToLog($source)
     {
         $words        = array(
             'bacon',
@@ -79,9 +81,11 @@ class MarkdownHelper
         );
         $wordsChecked = '';
 
-        foreach ($words as $word) {
-            if (stripos($source, $word) !== false) {
-                $wordsChecked .= $word.', ';
+        if ($this->isDebug) {
+            foreach ($words as $word) {
+                if (stripos($source, $word) !== false) {
+                    $wordsChecked .= $word.', ';
+                }
             }
         }
 
