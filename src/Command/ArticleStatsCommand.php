@@ -18,7 +18,7 @@ class ArticleStatsCommand extends Command
         $this
             ->setDescription('Passes content to Articles')
             ->addArgument('slug', InputArgument::REQUIRED, 'The article content')
-            ->addOption('format', null, InputOption::VALUE_REQUIRED, 'The text format forinput');
+            ->addOption('format', null, InputOption::VALUE_REQUIRED, 'The text format output', 'text');
     }
 
     protected function execute(InputInterface $input, OutputInterface $output)
@@ -33,10 +33,14 @@ class ArticleStatsCommand extends Command
 
         switch ($input->getOption('format')) {
             case 'text':
-                $io->listing($data);
+                $rows = [];
+                foreach ($data as $key => $val) {
+                    $rows[] = [$key, $val];
+                }
+                $io->table(['Key', 'Value'], $rows);
                 break;
             case 'json':
-                $io->write(\GuzzleHttp\json_encode($data));
+                $io->write(json_encode($data));
                 break;
             default:
                 throw new \Exception('What kind of crazy format is that!?');
