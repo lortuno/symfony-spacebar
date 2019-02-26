@@ -31,22 +31,37 @@ class ArticleStatsCommand extends Command
             'hearts' => rand(10, 100),
         );
 
+        $this->getOutput($input, $io, $data);
+
+        $io->success('We printed the article correctly!');
+    }
+
+    /**
+     * Devuelve la salida del texto recibido en su formato, si se admite.
+     *
+     * @param $input
+     * @param $io
+     * @param $data
+     *
+     * @return  mixed
+     */
+    private function getOutput($input, $io, $data)
+    {
         switch ($input->getOption('format')) {
             case 'text':
                 $rows = [];
                 foreach ($data as $key => $val) {
                     $rows[] = [$key, $val];
                 }
-                $io->table(['Key', 'Value'], $rows);
+
+                return $io->table(['Key', 'Value'], $rows);
                 break;
             case 'json':
-                $io->write(json_encode($data));
+                return $io->write(json_encode($data));
                 break;
             default:
                 throw new \Exception('What kind of crazy format is that!?');
                 break;
         }
-
-        $io->success('We printed the article correctly!');
     }
 }
