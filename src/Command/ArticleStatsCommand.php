@@ -16,9 +16,9 @@ class ArticleStatsCommand extends Command
     protected function configure()
     {
         $this
-            ->setDescription('My command description')
+            ->setDescription('Passes content to Articles')
             ->addArgument('slug', InputArgument::REQUIRED, 'The article content')
-            ->addOption('option1', null, InputOption::VALUE_REQUIRED, 'Option description');
+            ->addOption('format', null, InputOption::VALUE_REQUIRED, 'The text format forinput');
     }
 
     protected function execute(InputInterface $input, OutputInterface $output)
@@ -43,6 +43,6 @@ class ArticleStatsCommand extends Command
                 break;
         }
 
-        $io->success('You have a new command! Now make it your own! Pass --help to see your options.');
+        $io->success('We printed the article correctly!');
     }
 }
