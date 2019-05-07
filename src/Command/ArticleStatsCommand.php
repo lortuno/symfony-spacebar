@@ -16,52 +16,35 @@ class ArticleStatsCommand extends Command
     protected function configure()
     {
         $this
-            ->setDescription('Passes content to Articles')
-            ->addArgument('slug', InputArgument::REQUIRED, 'The article content')
-            ->addOption('format', null, InputOption::VALUE_REQUIRED, 'The text format output', 'text');
+            ->setDescription('Returns some article stats!')
+            ->addArgument('slug', InputArgument::REQUIRED, 'The article\'s slug')
+            ->addOption('format', null, InputOption::VALUE_REQUIRED, 'The output format', 'text')
+        ;
     }
 
     protected function execute(InputInterface $input, OutputInterface $output)
     {
-        $io   = new SymfonyStyle($input, $output);
+        $io = new SymfonyStyle($input, $output);
         $slug = $input->getArgument('slug');
 
-        $data = array(
-            'slug'   => $slug,
+        $data = [
+            'slug' => $slug,
             'hearts' => rand(10, 100),
-        );
+        ];
 
-        $this->getOutput($input, $io, $data);
-
-        $io->success('We printed the article correctly!');
-    }
-
-    /**
-     * Devuelve la salida del texto recibido en su formato, si se admite.
-     *
-     * @param $input
-     * @param $io
-     * @param $data
-     *
-     * @return  mixed
-     */
-    private function getOutput($input, $io, $data)
-    {
         switch ($input->getOption('format')) {
             case 'text':
                 $rows = [];
                 foreach ($data as $key => $val) {
                     $rows[] = [$key, $val];
                 }
-
-                return $io->table(['Key', 'Value'], $rows);
+                $io->table(['Key', 'Value'], $rows);
                 break;
             case 'json':
-                return $io->write(json_encode($data));
+                $io->write(json_encode($data));
                 break;
             default:
                 throw new \Exception('What kind of crazy format is that!?');
-                break;
         }
     }
 }
